@@ -12,16 +12,14 @@ vcpkg_add_to_path("${PYTHON3_DIR}")
 vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO KomodoPlatform/folly
-    REF 6fad3d5a80caaaf7cadebecbd4e9c7b9f3d3ad5d #2019.10.21.00
-    SHA512 d9f5eface255723694d578fb806f653538a78b9c605a845b6b79ff8120d4688c0c809dbc89a19d94db6ee6077476bc91c5ba16899b541bbf0679309a44a84c6a
+    REF 430aa0d8db79989dd56f8a0361fcb1c305618e41 # v2020.10.19.00
+    SHA512 d9f6aa0f7a8aee044c01af289d71e4c80d63e40ff128ac840663e3103d19cdd0da161a0b0d106493d950b9ac9a905c5e2abf8c1970c2f16b94dd95c0d1b1943e
     HEAD_REF master
     PATCHES
         missing-include-atomic.patch
-        #reorder-glog-gflags.patch
-        #disable-non-underscore-posix-names.patch
-        #boost-1.70.patch
-        #fix-addbit.patch
-        folly_c3861.patch
+        reorder-glog-gflags.patch
+        disable-non-underscore-posix-names.patch
+        boost-1.70.patch
 )
 
 file(COPY
@@ -90,6 +88,7 @@ FILE(WRITE ${CURRENT_PACKAGES_DIR}/share/folly/folly-config.cmake
 find_dependency(Threads)
 find_dependency(glog CONFIG)
 find_dependency(gflags CONFIG REQUIRED)
+find_dependency(ZLIB)
 ${_contents}")
 
 file(REMOVE_RECURSE ${CURRENT_PACKAGES_DIR}/debug/include)
