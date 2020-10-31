@@ -1,6 +1,6 @@
 vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
-    REPO curl/curl
+    REPO KomodoPlatform/curl
     REF curl-7_68_0
     SHA512 d75ed39b121a5a04d5a4ba89779967a49e196a93325747b51399adf1afb5f5c13355d6dbe798b259d19245c83bb55f0b621b24b25d8f3ddb1914df30067b8737
     HEAD_REF master
