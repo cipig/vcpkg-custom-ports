@@ -7,7 +7,7 @@ endif()
 
 vcpkg_from_github(
   OUT_SOURCE_PATH SOURCE_PATH
-  REPO HowardHinnant/date
+  REPO KomodoPlatform/date
   REF cac99da8dc88be719a728dc1b597b0ac307c1800 #3.0.0
   SHA512 07bac40c9d92ed92f05ab71b07c203fc341cd35999f1eab16d584bf77ff69e2cdc106931b2faf0dcfc5a311ee55e8445a81fd97c62f4672957b6aac1b24a08fd
   HEAD_REF master
