@@ -1,15 +1,16 @@
 vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
-    REPO Komodoplatform/spdlog
-    REF 4a9ccf7e38e257feecce0c579a782741254eaeef # v1.8.0
-    SHA512 333f14704e0d0aa88abbe4ddd29aeb009de2f845440559d463f1b7f9c7da32b2fbdba0f2abf97ec2a5c479d2d62bb2220b21a1bc423d62fbbb93952cf829d532
-    HEAD_REF v1.x
-    PATCHES fix-featurebuild.patch
+    REPO KomodoPlatform/spdlog
+    REF 69dc1739792bb4a6756a16f67c14ab94cabd5f5d # v1.8.0
+    SHA512 639849dc35370243a1738162b83151d532e46e8870d2ffe27f5715c1593bda19b89e41453d008e4a72fa43dc32d9e443472d96b84261f6a3da2d499f36897fd7
+    # PATCHES fix-featurebuild.patch
 )
 
 vcpkg_check_features(OUT_FEATURE_OPTIONS FEATURE_OPTIONS
 	benchmark SPDLOG_BUILD_BENCH
 )
+
+string(COMPARE EQUAL "${VCPKG_LIBRARY_LINKAGE}" "dynamic" SPDLOG_BUILD_SHARED)
 
 vcpkg_configure_cmake(
     SOURCE_PATH ${SOURCE_PATH}
@@ -18,6 +19,7 @@ vcpkg_configure_cmake(
         ${FEATURE_OPTIONS}
         -DSPDLOG_FMT_EXTERNAL=ON
         -DSPDLOG_INSTALL=ON
+        -DSPDLOG_BUILD_SHARED=${SPDLOG_BUILD_SHARED}
 )
 
 vcpkg_install_cmake()
