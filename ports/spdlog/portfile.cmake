@@ -15,7 +15,7 @@ vcpkg_check_features(OUT_FEATURE_OPTIONS FEATURE_OPTIONS
 if(VCPKG_TARGET_IS_WINDOWS)
     # configured in triplet file
     if(NOT DEFINED SPDLOG_WCHAR_FILENAMES)
-        set(SPDLOG_WCHAR_FILENAMES OFF)
+        set(SPDLOG_WCHAR_FILENAMES ON)
     endif()
 else()
     if("wchar" IN_LIST FEATURES)
@@ -35,6 +35,7 @@ vcpkg_cmake_configure(
         -DSPDLOG_INSTALL=ON
         -DSPDLOG_BUILD_SHARED=${SPDLOG_BUILD_SHARED}
         -DSPDLOG_WCHAR_FILENAMES=${SPDLOG_WCHAR_FILENAMES}
+        -DSPDLOG_BUILD_EXAMPLE=OFF
 )
 
 vcpkg_cmake_install()
