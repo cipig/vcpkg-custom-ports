@@ -1,8 +1,8 @@
 # header-only library
 vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
-    REPO KomodoPlatform/taskflow
-    REF v3.0.0
+    REPO taskflow/taskflow
+    REF v3.5.0
     SHA512 5c838ff4436ade1f3755eb6859f724188be2bfcd11baf172413a0bdc18bc516b7b911e6d83a140c95548f844a8c8b908992bdec10b3b6569876a3e3b2d5b821e
     HEAD_REF master
 )
