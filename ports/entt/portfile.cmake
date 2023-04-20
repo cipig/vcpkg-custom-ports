@@ -1,7 +1,7 @@
 vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
-    REPO KomodoPlatform/entt
-    REF v3.5.1
+    REPO skypjack/entt
+    REF v3.10.3
     SHA512 41d4c56f04e6d98218ce5994636407cef7a73c75a4f3b982b0756b0496002b841c22a652a28575e5d683c45459d66dba47dec3d51a92963b372cb72e95df8a0f
     HEAD_REF master
 )
