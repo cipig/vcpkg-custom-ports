@@ -1,7 +1,7 @@
 vcpkg_from_github(
         OUT_SOURCE_PATH SOURCE_PATH
         REPO gabime/spdlog
-        REF v1.8.5
+        REF v1.11.0
         SHA512 77cc9df0c40bbdbfe1f3e5818dccf121918bfceac28f2608f39e5bf944968b7e8e24a6fc29f01bc58a9bae41b8892d49cfb59c196935ec9868884320b50f130c
         HEAD_REF v1.x
 )
