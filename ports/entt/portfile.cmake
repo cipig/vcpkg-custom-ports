@@ -1,7 +1,7 @@
 vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
     REPO skypjack/entt
-    REF v3.6.0
+    REF v3.5.2
     SHA512 2cbff86fd0c5d28d03b973e88e96be5af1c188ce8a82bbadc38c5eefa405baa5b70a2bb1fbdda4f446dbbbeeee77fe02377085ae0d0bcbe5bc7c2b7230a52bff
     HEAD_REF master
 )
