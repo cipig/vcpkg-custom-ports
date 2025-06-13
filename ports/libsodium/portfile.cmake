@@ -2,9 +2,9 @@ include(vcpkg_common_functions)
 
 vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
-    REPO KomodoPlatform/libsodium
-    REF 1.0.18
-    SHA512 727fe50a5fb1df86ec5d807770f408a52609cbeb8510b4f4183b2a35a537905719bdb6348afcb103ff00ce946a8094ac9559b6e3e5b2ccc2a2d0c08f75577eeb
+    REPO jedisct1/libsodium
+    REF fd8c876bb5ad9d5ad79074ccd6b509f845631807
+    SHA512 b66bfc387303d97597fde6c5490b60b70849cf6bdaa479658c916248c159a1c8cf5f237995f132b13557332e920a5314f18edca8f64da8b9f33f0707cf9ce9bf
     HEAD_REF master
 )
 
