@@ -1,9 +1,9 @@
 vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
-    REPO microsoft/cpprestsdk
-    REF 411a109150b270f23c8c97fa4ec9a0a4a98cdecf
-    SHA512 4f604763f05d53e50dec5deaba283fa4f82d5e7a94c7c8142bf422f4c0bc24bcef00666ddbdd820f64c14e552997d6657b6aca79a29e69db43799961b44b2a1a
-    HEAD_REF master
+    REPO tbarnekov/cpprestsdk
+    REF 6f59717fcec549cf217e0a99e6b9c7eb10d19506
+    SHA512 160170fd3180e26e69d8b62ab6eecaacb1c4eb72bd9a61ae924267928e8a3ced02885b5ba76ac9144818dfb1dc3e0344f064bb983f9f1934fff0736312f7a137
+    HEAD_REF increase_throughput
     PATCHES fix-find-openssl.patch
 )
 
