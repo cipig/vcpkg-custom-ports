@@ -1,14 +1,16 @@
+if(EXISTS "${CURRENT_INSTALLED_DIR}/share/range-v3-vs2015/copyright")
+    message(FATAL_ERROR "'${PORT}' conflicts with 'range-v3-vs2015'. Please remove range-v3-vs2015:${TARGET_TRIPLET}, and try to install ${PORT}:${TARGET_TRIPLET} again.")
+endif()
 vcpkg_from_github(
     OUT_SOURCE_PATH SOURCE_PATH
-    REPO KomodoPlatform/range-v3
-    REF 8c88f7174bcc71e525015430282cd7b984f8be47 # 0.12.0
-    SHA512 deebc59d05313069a00cae27fa1b761d414b58507f362e0a263e570a950e069f31195fccc0364e835c3a2ac91e17c16fa537e124b1b389aeaa340f8198282c10
+    REPO ericniebler/range-v3
+    REF a81477931a8aa2ad025c6bda0609f38e09e4d7ec # Dude, where's my bored ape? (0.12.0)
+    SHA512 e58030bc7c281e90298025dc21fed9bdabda358cd847b59e5b58feb3e0b93fcf6398e3b8e2912e45deeed67f454c08d4fc4df7f8d0dc378b437612f15c0832fe
     HEAD_REF master
 )
 
-vcpkg_configure_cmake(
-    SOURCE_PATH ${SOURCE_PATH}
-    PREFER_NINJA
+vcpkg_cmake_configure(
+    SOURCE_PATH "${SOURCE_PATH}"
     OPTIONS
         -DRANGE_V3_TESTS=OFF
         -DRANGE_V3_EXAMPLES=OFF
@@ -16,12 +18,16 @@ vcpkg_configure_cmake(
         -DRANGE_V3_HEADER_CHECKS=OFF
 )
 
-vcpkg_install_cmake()
+vcpkg_cmake_install()
 
-vcpkg_fixup_cmake_targets(CONFIG_PATH lib/cmake/range-v3)
+vcpkg_cmake_config_fixup(CONFIG_PATH lib/cmake/range-v3)
 
-file(REMOVE_RECURSE ${CURRENT_PACKAGES_DIR}/debug ${CURRENT_PACKAGES_DIR}/lib)
+file(REMOVE_RECURSE
+    "${CURRENT_PACKAGES_DIR}/debug"
+    "${CURRENT_PACKAGES_DIR}/include/module.modulemap"
+    "${CURRENT_PACKAGES_DIR}/lib"
+)
 
 vcpkg_copy_pdbs()
 
-file(INSTALL ${SOURCE_PATH}/LICENSE.txt DESTINATION ${CURRENT_PACKAGES_DIR}/share/${PORT} RENAME copyright)
+vcpkg_install_copyright(FILE_LIST "${SOURCE_PATH}/LICENSE.txt")
