@@ -14,7 +14,7 @@ vcpkg_check_features(OUT_FEATURE_OPTIONS FEATURE_OPTIONS
 
 # SPDLOG_WCHAR_FILENAMES can only be configured in triplet file since it is an alternative (not additive)
 if(NOT DEFINED SPDLOG_WCHAR_FILENAMES)
-    set(SPDLOG_WCHAR_FILENAMES OFF)
+    set(SPDLOG_WCHAR_FILENAMES ON)
 endif()
 if(NOT VCPKG_TARGET_IS_WINDOWS AND SPDLOG_WCHAR_FILENAMES)
     message(FATAL_ERROR "Build option 'SPDLOG_WCHAR_FILENAMES' is for Windows.")
